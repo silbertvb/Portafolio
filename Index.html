@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+    *Archivo: Portafolio de Victor Da Silva
+    *Descripcion: Portafolio personal con información profesional, proyectos y formulario de contacto.
+    *Buneas prácicas aplicadas: semántica HTML5, accesibilidad, diseño responsivo, estructura clara y ordenada.
+-->
+
+
+<head>
+    <!-- Codificación estándar que evita errores con caracteres especiales -->
+    <meta charset="UTF-8">
+
+    <!-- Ajuste responsivo para móviles y pantallas modernas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Victor Da Silva</title>
+
+    <!-- Importación de tipografías desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Canvas para estrellas (queda detrás del contenido) -->
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <!-- ==========   EMCABEZADO DEL PORTAFOLIO ===========-->
+    <header class="site-header">
+
+        <!-- Contenedor interno del encabezado -->
+        <div class="header-inner">
+
+            <!-- Información básica sobre mi -->
+            <div class="header-text">
+                <h1 class="saludo">Hola 👋, soy</h1>
+                <h2 class="name"><span class="color1">Victor D</span><span class="color2">a Silva</span></h2>
+                <p class="slogan">Desarrollador Web & Diseñador Gráfico</p>
+
+                <div class="header-buttons">
+                    <a href="CV_Victor Bruno Da Silva Bertola.pdf" class="btn-cv">Descargar CV</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Barra de navegacion principal del sitio -->
+        <nav class="main-nav">
+            <!-- Enlaces a secciones internas -->
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto" class="cta">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ==========   CONTENIDO PRINCIPAL DEL PORTAFOLIO ===========-->
+    <main>
+
+        <!--------------------- Sección "Sobre mí" ------------------->
+        <section id="sobre-mi" class="about container">
+
+            <div>
+                <!-- Logo personal / identidad visual -->
+                <img src="img/Avatar.jpeg" alt="Logo de Victor Da Silva" class="header-logo">
+            </div>
+
+            <div class="about-text">
+                <h2>Sobre mí</h2>
+                <p>Soy desarrollador web con dos años de experiencia creando aplicaciones front-end y back-end,
+                    componentes
+                    accesibles y gestión de bases de datos, aplicando buenas prácticas de arquitectura, usabilidad y
+                    rendimiento.
+                    Me especializo en construir interfaces eficaces, optimizadas y centradas en el usuario, adaptándome
+                    a
+                    distintos entornos y necesidades tecnológicas.</p>
+            </div>
+
+            <div class="skills-list">
+
+                <div class="frontend">
+                    <h3 class="icon-frontend">Frontend</h3>
+                    <ul class="skill-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>ReactJS</li>
+                        <li>VueJS</li>
+                    </ul>
+                </div>
+
+                <div class="backend">
+                    <h3 class="icon-backend">Backend</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!--------------------- Sección "Proyectos" ------------------->
+        <section id="proyectos" class="projects container">
+            <h2>Proyectos destacados</h2>
+
+            <!-- Grid que contiene todas las tarjetas de proyectos -->
+            <div class="project-grid">
+
+                <!-- ===== Proyecto 1 ===== -->
+                <article class="project-card">
+                    <!-- Imagen del proyecto -->
+                    <img src="img/Interfaz_Tienda_Valentine.JPG" alt="Tienda Valentine's Brides" class="project-thumb">
+
+                    <!-- Contenido textual de la tarjeta -->
+                    <div class="project-body">
+                        <h3 class="project-title"><strong>Valentin's Brides</strong> — Tienda Online de vestidos de
+                            novia</h3>
+                        <p class="project-desc">Desarrollo de un e-commerce completo orientado a la venta de vestidos
+                            de novia de alta gama. El proyecto incluye una interfaz de usuario intuitiva y atractiva,
+                            ademas de un catálogo organizado en 4 categorías, un carrito de compras persistente y diseño
+                            responsivo. Se incorporaron efectos CSS hover que modifican el color de los botones al pasar
+                            el cursor, mejorando la experiencia de usuario (UX).Además, se implementó interactividad que
+                            permite añadir vestidos al carrito de forma dinámica, reforzando la experiencia de usuario
+                            en un entorno de comercio electrónico real.</p>
+                        <p class="tech"><strong> ⚙️Tecnologías</strong>: HTML5 • CSS3 • JavaScript (ES6+) • LocalStorage
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- ===== Proyecto 2 ===== -->
+                <article class="project-card">
+                    <img src="img/Evento_app.JPG" alt="Captura Proyecto B" class="project-thumb">
+                    <div class="project-body">
+                        <h3 class="project-title"><strong>Event App</strong> - Sistema Gestor de Eventos en Tiempo real</h3>
+                        <p class="project-desc">Aplicación web diseñada para la gestión y visualización de eventos en tiempo real,
+                            entre cliente y servidor. La aplicación permite filtrar por categoría y fechas, e inscribirse en los
+                            eventos con actualización inmediata del contador de participantes. Se implementó una arquitectura modular
+                            separando backend (API REST + WebSocket) de frontend (React con Context API), asegurando escalabilidad y
+                            mantenibilidad. La interfaz incluye efectos visuales como transiciones suaves, feedback interactivo en
+                            botones, y diseño adaptable a dispositivos móviles, y desktop.
+                        </p>
+                        <p class="tech"><strong> ⚙️Tecnologías:</strong> Node.js • Express • MongoDB •
+                            Socket.IO • React • Tailwind CSS • Context API • AJAX • WebSockets</p>
+                        
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--------------------- Sección "Contacto" ------------------->
+        <section id="contacto" class="contact container">
+            <h2>Contacto</h2>
+
+            <!-- Formulario sin validación automática del navegador (novalidate) -->
+            <form id="contactForm" novalidate>
+
+                <!-- Campo: Nombre -->
+                <div class="form-row">
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+                </div>
+
+                <!-- Campo: Email -->
+                <div class="form-row">
+                    <label for="email">Correo</label>
+                    <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+                </div>
+
+                <!-- Campo: Mensaje -->
+                <div class="form-row">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje..."
+                        required></textarea>
+                </div>
+
+                <!-- Acciones del formulario -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                    <button type="reset" class="btn-limpiar">Limpiar</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- script para la integracion con JS -->
+    <script src="stars.js"></script>
+</body>
+
+</html>
