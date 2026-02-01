@@ -9,7 +9,7 @@ Este sitio muestra mis habilidades, proyectos destacados y formas de contacto co
 
 ## 🧠 Sobre mí
 
-Hola, soy **Victor D a Silva**, un desarrollador web apasionado por crear experiencias digitales efectivas y atractivas. Tengo experiencia construyendo tanto interfaces front-end como soluciones back-end, aplicando buenas prácticas de usabilidad y rendimiento. :contentReference[oaicite:1]{index=1}
+Hola, soy **Victor D a Silva**, un desarrollador web apasionado por crear experiencias digitales efectivas y atractivas. Tengo experiencia construyendo tanto interfaces front-end como soluciones back-end, aplicando buenas prácticas de usabilidad y rendimiento.
 
 ---
 
@@ -29,7 +29,7 @@ En este portafolio se muestran y/o uso tecnologías como:
 - Java
 - PHP
 - MySQL
-- MongoDB :contentReference[oaicite:2]{index=2}
+- MongoDB
 
 ---
 
@@ -42,14 +42,14 @@ Proyecto tipo e-commerce con:
 - Catálogo de productos
 - Carrito persistente
 - UI responsive y moderna  
-**Tecnologías:** HTML5, CSS3, JavaScript (ES6+) :contentReference[oaicite:3]{index=3}
+**Tecnologías:** HTML5, CSS3, JavaScript (ES6+).
 
 ### 📅 **Event App — Gestión de Eventos**
 Aplicación web real-time con:
 - Filtrado por categorías y fechas
 - Inscripción interactiva
 - Arquitectura separada entre backend y frontend  
-**Tecnologías:** Node.js, Express, MongoDB, React, Tailwind CSS, Socket.IO :contentReference[oaicite:4]{index=4}
+**Tecnologías:** Node.js, Express, MongoDB, React, Tailwind CSS, Socket.IO .
 
 ---
 
