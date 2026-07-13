@@ -44,6 +44,7 @@
 (() => {
   document.querySelectorAll('.btn-copy[data-copy]').forEach((btn) => {
     const defaultLabel = btn.textContent;
+    const defaultTooltip = btn.dataset.tooltip;
     let resetTimer = null;
 
     btn.addEventListener('click', async () => {
@@ -52,6 +53,7 @@
         btn.textContent = '✓';
         btn.classList.add('btn-copy--done');
         btn.setAttribute('aria-label', 'Email copiado');
+        btn.dataset.tooltip = '¡Copiado!';
       } catch (error) {
         btn.textContent = '✗';
       }
@@ -61,6 +63,7 @@
         btn.textContent = defaultLabel;
         btn.classList.remove('btn-copy--done');
         btn.setAttribute('aria-label', 'Copiar email al portapapeles');
+        btn.dataset.tooltip = defaultTooltip;
       }, 1500);
     });
   });

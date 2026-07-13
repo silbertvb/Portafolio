@@ -505,12 +505,18 @@ input:focus, textarea:focus {
     color: #cfd1cf;
 }
 
+/* Espacio inferior para que la última sección no quede pegada al borde de la ventana */
+.contact {
+    padding-bottom: 1rem;
+}
+
 /* Vías de contacto directas (email, LinkedIn, GitHub) */
 .contact-links {
     display: flex;
     flex-wrap: wrap;
     gap: .8rem;
     margin-top: 1.2rem;
+    margin-left: 5px;
 }
 
 .contact-email-group {
@@ -520,6 +526,7 @@ input:focus, textarea:focus {
 }
 
 .btn-copy {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -536,6 +543,30 @@ input:focus, textarea:focus {
 
 .btn-copy:hover {
     background-color: #165432;
+}
+
+/* Tooltip propio (arriba del botón), ya que el `title` nativo no se puede reposicionar */
+.btn-copy::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e1e23;
+    color: #eaeaea;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.btn-copy:hover::after,
+.btn-copy:focus-visible::after {
+    opacity: 1;
 }
 
 .btn-copy--done {
