@@ -1,0 +1,578 @@
+/* ===========================
+   Reset pequeño y ajustes base
+   =========================== */
+
+/* Fondo base gris oscuro */
+:root{
+  --bg-dark: #1e1e23; /* gris oscuro */
+}
+
+/* Fondo del documento */
+body{
+  height:100%;
+  margin:0;
+  background: radial-gradient(ellipse at top left, rgba(30,30,35,1) 0%, rgba(20,20,24,1) 60%), var(--bg-dark);
+  color: #eaeaea;
+}
+
+/* Canvas de estrellas: ocupa todo el viewport y queda detrás */
+#stars{
+  position: fixed;          /* posición fija */
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;              /* ocupa todo el viewport */
+  height: 100%;             /* ocupa todo el viewport */
+  z-index: -1;              /* detrás de todo */
+  pointer-events: none;     /* no interfiere con clicks */
+  display: block;           /* Asegura que se muestre */
+  background: transparent; 
+}
+
+/* Asegura los elementos con fondo transparente */
+.container, .header, section, #sobre-mi, main, div, article .project-card, footer, form {
+  background: transparent; 
+}
+
+
+/* ===========================
+   Encabezado del portafolio PARTE DEL DOCUMENTO ENCABEZADO
+   =========================== */
+/* Contenedor principal del header */
+.header-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent; /* Fondo transparente */
+    text-align: center;            /* Centra el texto */
+    display: flex;                 /* Contenedor flexible */
+    flex-direction: column;        /* Elementos en columna */
+    align-items: center;           /* Centra horizontalmente */
+    gap: 1rem;                     /* Espacio entre elementos */
+    margin: 100px;                 /* Margen alrededor del header */
+    padding: 20px;                 /* Espaciado interno */
+}
+
+/* Contenedor de texto del header */
+.header-text .saludo{
+    font-size: 1.5rem;              /* Tamaño de fuente mediano para el saludo */
+    margin: 0;                      /* Elimina margen por defecto */
+}
+
+.header-text .name{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.5rem;                              /* Tamaño de fuente grande para el nombre */
+    margin: 20px 15px 10px 20px;                    /* Margen alrededor del nombre */
+}
+
+/* Slogan / subtítulo debajo del nombre */
+.header-text .slogan{
+    font-size: 1.25rem;           /* Tamaño de fuente mediano para el eslogan */
+    margin: 0;                    /* Elimina margen por defecto */
+    margin-top: 0.5rem 0 0 0;           /* Espacio superior entre nombre y eslogan */
+}
+
+/*  Contenedor de botones debajo del eslogan */
+.header-buttons {
+    margin-top: 20px;             /* Espacio superior entre eslogan y botones */
+    display: flex;                /* Contenedor flexible */
+    justify-content: center;      /* Centra los botones */
+    gap: 15px;                    /* Espacio entre botones */
+}   
+
+
+/* ===========================
+   Navegación principal
+   =========================== */
+/* Contenedor de la barra de navegación */
+.main-nav {
+    display: flex;                /* Contenedor flexible */
+    justify-content: center;    /* Alinea los elementos a la derecha */
+    background-color: rgb(50, 11, 74);     /* Fondo oscuro para la barra de navegación */
+    padding: 0.8rem 2rem;         /* Espaciado interno */
+}
+
+/* Estilos para los enlaces de navegación */
+.main-nav a {
+    text-align: center; 
+    color: white;               /* color del texto blanco */
+    text-decoration: none;        /* Elimina subrayado */
+    margin-left: 1.8rem;          /* Espacio entre enlaces */
+    font-weight: bold;            /* Texto en negrita */
+    transition: all 0.4s ease;    /* Transición suave para efectos en la barra de navegación */
+}   
+
+/* Efecto hover para los enlaces de navegación */
+.main-nav a:hover {
+    color: #126638;             /* cambia a un color verde suave al pasar el ratón */
+    transform: scale(1.2);        /* Aumenta ligeramente el tamaño */
+}
+
+/* ===========================
+   Sección: Sobre mí
+   =========================== */
+/* Imagen del logo/ avatar en formato ecxagonal */
+.header-logo {
+    width: 300px; /* Ancho fijo */
+    height: 300px; /* Alto fijo */
+    object-fit: cover; /* Cubre el contenedor sin distorsionar */
+
+    /* Forma hexagonal */
+    clip-path: polygon(
+        25% 5%, 75% 5%, 
+        100% 50%, 75% 95%, 
+        25% 95%, 0% 50%
+    );
+
+    /* Borde alrededor (más complejo en formas no circulares) */
+    outline: 4px solid rgba(35, 2, 2, 0.15); /* Borde sutil */
+
+
+    /* Estética original */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+    margin-left: 45px;
+    margin: 20px; /* Margen alrededor del avatar */
+    padding: 30px 0; /* Espaciado interno */
+}
+
+/* Estilos para los títulos de las secciones */
+.about h2, .projects h2, .contact h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;                    /* Tamaño de fuente grande para títulos */
+    border-bottom: 2px solid #333;    /* Línea debajo del título */
+    padding-bottom: 0.2rem;             /* Espacio debajo del título */
+    margin: 5px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;     /* Fila superior (avatar+texto) y Stack apilados */
+    align-items: center;
+    gap: 3rem;
+    padding: 20px;
+    width: 90%;
+}
+
+.about-top {
+    display: flex;
+    align-items: center;        /* Centra el texto verticalmente */
+    justify-content: center;
+    gap: 3rem;                  /* Espacio entre avatar y texto */
+    flex-wrap: wrap;            /* Evita que se rompa en pantallas pequeñas */
+    width: 100%;
+}
+
+.about-text {
+    flex: 1;                       /* Toma el espacio restante */
+    min-width: 260px;
+}
+
+/* Estilos para el párrafo de la sección "Sobre mí" */
+.about p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;                    /* Tamaño de fuente estándar para párrafos */
+    line-height: 1.6;                   /* Altura de línea para mejor legibilidad */
+}
+
+p {
+    text-align: justify; /* Justifica el texto en todos los párrafos */
+}
+
+/* Subsección "Stack" dentro de Sobre mí */
+.stack-section {
+    width: 100%;
+}
+
+.stack-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.3rem;
+    margin: 0 0 1.8rem 0;
+}
+
+/* Grid responsivo: las categorías se colocan en paralelo en vez de en columna */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.skill-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-category-title {
+    font-size: 1.3rem;
+    color: #1b7443;
+    font-weight: bold;
+    margin: 0 0 0.8rem 0;
+}
+
+/*skills: rectangular */
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 100%;
+    max-width: 180px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    list-style: none;
+    background: #f5f5f1e8;
+    color: #000;
+    padding: 6px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+/* ===========================
+   Sección: Proyectos
+   =========================== */
+
+/* Grid responsivo para las tarjetas de los proyectos */
+.project-grid {
+    display: grid;                                                  /* Contenedor de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    /* Columnas responsivas */
+    gap: 1.5rem;                                                    /* Espacio entre tarjetas */
+}
+
+/* Estilos para cada tarjeta de proyecto */
+.project-card {
+    border: 1px solid #a5b0ac;                                  /* Borde sutil */
+    border-radius: 8px;                                           /* Bordes redondeados */
+    padding: 1rem;                                                /* Espaciado interno */
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.2);                 /* Sombra ligera */
+    overflow: hidden;                                             /* evita que la imagen sobresalga */
+    margin: 5px;                                                  /* Margen alrededor de la tarjeta */
+}
+
+/* Efecto hover para las tarjetas de proyecto */
+.project-card:hover {
+    transform: translateY(-5px);                                  /* Eleva la tarjeta ligeramente */
+    box-shadow: 0 12px 36px rgba(2, 6, 23, 0.3);                /* Sombra más pronunciada */
+    transition: all 0.2s ease;                                    /* Transición suave */
+}
+
+/* Imagen del proyecto dentro de la tarjeta */
+.project-thumb {
+    width: 100%;                      /* Ancho completo de la tarjeta */
+    height: 250px;                    /* Alto fijo */
+    object-fit: cover;                /* Cubre el contenedor sin distorsionar */
+    margin-bottom: 0.75rem;           /* Espacio debajo de la imagen */
+}
+
+/* Cuerpo del proyecto dentro de la tarjeta */
+.project-body {
+    padding: 1rem 0;                     /* Espaciado interno con ajuste al lado izquierdo */
+}
+
+/* Título del proyecto */
+.project-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;                 /* Tamaño de fuente para el título del proyecto */
+    margin: 0 0 0.5rem 0;               /* Espacio debajo del título */
+    color: #1b7443;
+}
+
+/* Descripción del proyecto */
+.project-desc, .tech {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tecnologías utilizadas en el proyecto */
+.tech {
+    margin-top: 0.9rem;                /* Espacio superior */
+    font-size: 0.9rem;                /* Tamaño de fuente más pequeño */
+    color: #fdfbfb;                       /* Color de texto terciario */
+}
+
+/* Enlaces de repositorio/demo dentro de la tarjeta de proyecto */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.9rem;
+}
+
+.btn-gallery {
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Nota aclaratoria sobre disponibilidad de la demo */
+.project-note {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: #b7bdb8;
+    font-style: italic;
+}
+
+/* ===========================
+   Lightbox de capturas (fallback de demos)
+   =========================== */
+.gallery-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 12, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 100;
+}
+
+.gallery-overlay[hidden] {
+    display: none;
+}
+
+.gallery-box {
+    position: relative;
+    background: #1e1e23;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem 1.5rem;
+    max-width: min(1000px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #eaeaea;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-close:hover {
+    background-color: #165432;
+}
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.gallery-item {
+    margin: 0;
+    max-width: 440px;
+    flex: 1 1 320px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.4);
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .gallery-item img {
+        height: 260px;
+    }
+}
+
+.gallery-item figcaption {
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #cfd1cf;
+}
+
+/* ===========================
+   Botones reutilizables
+   =========================== */
+.btn-1, .btn-2,.btn-cv, .btn-contacto {
+    display: inline-block;                   /* Permite aplicar padding y margen */
+    padding: 0.5rem 1rem;                    /* Espaciado interno */
+    background-color: #165432;             /* Fondo oscuro */
+    color: white;                          /* Texto blanco */
+    text-decoration: none;                   /* Elimina subrayado */
+    border-radius: 19px;                     /* Bordes redondeados */
+    cursor: pointer;                         /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease;  /* Transición suave para el fondo */
+}
+
+.btn-1:hover, .btn-2:hover, .btn-contacto:hover {
+    background-color: #0c873b;              /* Cambia a un color verde suave al pasar el ratón */
+}
+
+.btn-cv {
+    text-decoration:underline;
+    background-color: #6c6f2f;
+}
+
+.btn-cv:hover {
+    background-color: #bbbe2b;  
+}
+
+/* === Efecto botones de Enviar y Limpiar ===*/
+.btn-enviar:hover {
+    background-color: #17cd4d;                   /* Cambia a un color verde suave al pasar el ratón */
+    transition: all 0.8s ease;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* ===========================
+   Formulario de contacto
+   =========================== */
+
+form {
+    padding: 1.2rem;                                /* Espaciado interno */
+    border: 1px solid rgba(255,255,255,0.04);     /* Borde muy sutil */
+}
+
+/* Contenedor flexible para filas del formulario */ 
+.form-row {
+    display: flex;                   /* Contenedor flexible */
+    flex-direction: column;          /* Elementos en columna */
+    margin-bottom: 1rem;             /* Espacio debajo de cada fila */
+}
+
+/* Estilos para las etiquetas del formulario */
+label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 0.2rem;           /* Espacio debajo de la etiqueta */
+    font-weight: bold;                /* Texto en negrita */
+}
+
+/* Estilos para los campos de entrada y textarea */
+input, textarea {
+    padding: 3px;                      /* Espaciado interno */
+    border: 1px solid #ccc;          /* Borde gris claro */
+    border-radius: 5px;                /* Bordes ligeramente redondeados */
+    font-size: 1rem;                   /* Tamaño de fuente estándar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Efecto visual al enfocar campo */
+input:focus, textarea:focus {
+    border-color: var(--accent);                       /* Cambia el color del borde al enfocar */
+    box-shadow: 0 6px 18px rgba(30,144,255,0.06);    /* Sombra sutil */
+}
+
+/* Contenedor de los botones */
+.form-actions {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+/* Mensaje de estado del envío (éxito/error/pendiente) */
+.form-status {
+    margin-top: .8rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.form-status:empty {
+    margin-top: 0;
+}
+
+.form-status--success {
+    color: #4fd17a;
+}
+
+.form-status--error {
+    color: #e8544c;
+}
+
+.form-status--pending {
+    color: #cfd1cf;
+}
+
+/* Vías de contacto directas (email, LinkedIn, GitHub) */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-top: 1.2rem;
+}
+
+.contact-email-group {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.btn-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #eaeaea;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-copy:hover {
+    background-color: #165432;
+}
+
+.btn-copy--done {
+    background-color: #17cd4d;
+    color: #0c1a10;
+}
+
+/* ===========================
+   Footer del sitio
+   =========================== */
+
+.site-footer {
+    border-top: 1px solid rgba(255,255,255,.03);  /* Línea superior sutil */
+    padding: 1.2rem 0;                              /* Espaciado vertical */
+    text-align: center;                             /* Centra el texto */
+    color: var(--muted);                            /* Color de texto atenuado */
+}
+
+/* ===========================
+   Responsive (móviles < 700px)
+   =========================== */
+
+@media (max-width: 700px) {         
+
+    /* Navegación centrada */
+    .main-nav {
+        justify-content: center;
+    }
+
+    /* Avatar más pequeño en móvil */
+    .avatar {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* Respeto por usuarios con reducción de movimiento: desactiva animaciones del canvas */
+@media (prefers-reduced-motion: reduce) {
+    #stars { display: none; }
+    }
+}

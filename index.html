@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+    *Archivo: Portafolio de Victor Da Silva
+    *Descripcion: Portafolio personal con información profesional, proyectos y formulario de contacto.
+    *Buneas prácicas aplicadas: semántica HTML5, accesibilidad, diseño responsivo, estructura clara y ordenada.
+-->
+
+
+<head>
+    <!-- Codificación estándar que evita errores con caracteres especiales -->
+    <meta charset="UTF-8">
+
+    <!-- Ajuste responsivo para móviles y pantallas modernas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Victor Da Silva</title>
+
+    <!-- Importación de tipografías desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Canvas para estrellas (queda detrás del contenido) -->
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <!-- ==========   EMCABEZADO DEL PORTAFOLIO ===========-->
+    <header class="site-header">
+
+        <!-- Contenedor interno del encabezado -->
+        <div class="header-inner">
+
+            <!-- Información básica sobre mi -->
+            <div class="header-text">
+                <h1 class="saludo">Hola 👋, soy</h1>
+                <h2 class="name"><span class="color1">Victor D</span><span class="color2">a Silva</span></h2>
+                <p class="slogan">Desarrollador Backend Junior · Node.js & TypeScript | +7 años en gestión de negocio</p>
+
+                <div class="header-buttons">
+                    <a href="CV_Victor_DaSilva_Bertola_Tech.pdf" class="btn-cv" download>Descargar CV</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Barra de navegacion principal del sitio -->
+        <nav class="main-nav">
+            <!-- Enlaces a secciones internas -->
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto" class="cta">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ==========   CONTENIDO PRINCIPAL DEL PORTAFOLIO ===========-->
+    <main>
+
+        <!--------------------- Sección "Sobre mí" ------------------->
+        <section id="sobre-mi" class="about container">
+
+            <div class="about-top">
+                <div class="about-avatar">
+                    <!-- Logo personal / identidad visual -->
+                    <img src="img/Avatar.jpeg" alt="Logo de Victor Da Silva" class="header-logo">
+                </div>
+
+                <div class="about-text">
+                    <h2>Sobre mí</h2>
+                    <p>Técnico Superior en Desarrollo de Aplicaciones Web (2026), con prácticas en una plataforma SaaS de
+                        telemedicina en producción donde trabajé con TypeScript, Node.js, React y APIs REST en flujos
+                        profesionales de Git, code review y CI/CD. Actualmente completo la certificación IT Specialist –
+                        Python (INF-303). Aporto además 7 años de experiencia previa en gestión de negocio y equipos.</p>
+                </div>
+            </div>
+
+            <div class="stack-section">
+                <h3 class="stack-title">Stack</h3>
+
+                <div class="skills-list">
+
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">Backend</h4>
+                        <ul class="skill-list">
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>TypeScript</li>
+                            <li>JavaScript</li>
+                            <li>APIs REST</li>
+                            <li>WebSockets</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">Frontend</h4>
+                        <ul class="skill-list">
+                            <li>React</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>Tailwind CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">Bases de datos</h4>
+                        <ul class="skill-list">
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">DevOps</h4>
+                        <ul class="skill-list">
+                            <li>Docker</li>
+                            <li>Git/GitHub</li>
+                            <li>GitHub Actions</li>
+                            <li>Linux</li>
+                            <li>Railway</li>
+                            <li>Netlify</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">En formación</h4>
+                        <ul class="skill-list">
+                            <li>Python (INF-303)</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!--------------------- Sección "Proyectos" ------------------->
+        <section id="proyectos" class="projects container">
+            <h2>Proyectos destacados</h2>
+
+            <!-- Grid que contiene todas las tarjetas de proyectos -->
+            <div class="project-grid">
+
+                <!-- ===== Proyecto 1: EduTech (TFG) ===== -->
+                <article class="project-card">
+                    <!-- Imagen del proyecto -->
+                    <img src="img/EduTech.jpg" alt="Vista de alumno de la plataforma EduTech" class="project-thumb">
+
+                    <div class="project-body">
+                        <h3 class="project-title"><strong>EduTech</strong> — Plataforma e-learning full-stack (TFG)</h3>
+                        <p class="project-desc">Monorepo con npm workspaces que integra un frontend en React + Vite y un
+                            backend en Express con base de datos PostgreSQL. Incluye autenticación con Google OAuth 2.0
+                            (Passport) y cuentas locales con contraseña hasheada, control de acceso por roles
+                            (alumno/profesor/administrador), CRUD completo de cursos, lecciones y tests, y un backoffice
+                            de administración. La base de datos corre en Docker y el proyecto está desplegado en Railway.</p>
+                        <p class="tech"><strong> ⚙️Tecnologías</strong>: React • Vite • Express • PostgreSQL • Passport
+                            (OAuth 2.0) • Docker • Railway</p>
+                        <p class="project-links">
+                            <a href="https://github.com/silbertvb/EduTech" class="btn-1" target="_blank" rel="noopener noreferrer">Repositorio</a>
+                            <a href="https://edutech-production-703d.up.railway.app/" class="btn-2" target="_blank" rel="noopener noreferrer">Demo en vivo</a>
+                            <button type="button" class="btn-2 btn-gallery" data-gallery="edutech-gallery">📸 Ver capturas</button>
+                        </p>
+                        <p class="project-note">Si la demo en vivo no responde (hosting en capa gratuita), puedes ver la
+                            aplicación en funcionamiento con el botón «Ver capturas».</p>
+                    </div>
+                </article>
+
+                <!-- ===== Proyecto 2: Event App ===== -->
+                <article class="project-card">
+                    <img src="img/Evento_app.JPG" alt="Captura Proyecto B" class="project-thumb">
+                    <div class="project-body">
+                        <h3 class="project-title"><strong>Event App</strong> - Sistema Gestor de Eventos en Tiempo real</h3>
+                        <p class="project-desc">Aplicación web diseñada para la gestión y visualización de eventos en tiempo real,
+                            entre cliente y servidor. La aplicación permite filtrar por categoría y fechas, e inscribirse en los
+                            eventos con actualización inmediata del contador de participantes. Se implementó una arquitectura modular
+                            separando backend (API REST + WebSocket) de frontend (React con Context API), asegurando escalabilidad y
+                            mantenibilidad. La interfaz incluye efectos visuales como transiciones suaves, feedback interactivo en
+                            botones, y diseño adaptable a dispositivos móviles, y desktop.
+                        </p>
+                        <p class="tech"><strong> ⚙️Tecnologías:</strong> Node.js • Express • MongoDB •
+                            Socket.IO • React • Tailwind CSS • Context API • AJAX • WebSockets</p>
+
+                    </div>
+                </article>
+
+                <!-- ===== Proyecto 3: Valentine's Brides ===== -->
+                <article class="project-card">
+                    <!-- Imagen del proyecto -->
+                    <img src="img/Interfaz_Tienda_Valentine.JPG" alt="Tienda Valentine's Brides" class="project-thumb">
+
+                    <!-- Contenido textual de la tarjeta -->
+                    <div class="project-body">
+                        <h3 class="project-title"><strong>Valentin's Brides</strong> — Tienda Online de vestidos de
+                            novia</h3>
+                        <p class="project-desc">Desarrollo de un e-commerce completo orientado a la venta de vestidos
+                            de novia de alta gama. El proyecto incluye una interfaz de usuario intuitiva y atractiva,
+                            ademas de un catálogo organizado en 4 categorías, un carrito de compras persistente y diseño
+                            responsivo. Se incorporaron efectos CSS hover que modifican el color de los botones al pasar
+                            el cursor, mejorando la experiencia de usuario (UX).Además, se implementó interactividad que
+                            permite añadir vestidos al carrito de forma dinámica, reforzando la experiencia de usuario
+                            en un entorno de comercio electrónico real.</p>
+                        <p class="tech"><strong> ⚙️Tecnologías</strong>: HTML5 • CSS3 • JavaScript (ES6+) • LocalStorage
+                        </p>
+
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--------------------- Sección "Contacto" ------------------->
+        <section id="contacto" class="contact container">
+            <h2>Contacto</h2>
+
+            <!-- Formulario conectado a Formspree (https://formspree.io/f/mjgnvyde) -->
+            <form id="contactForm" action="https://formspree.io/f/mjgnvyde" method="POST" novalidate>
+
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
+
+                <!-- Campo: Nombre -->
+                <div class="form-row">
+                    <label for="name">Nombre</label>
+                    <input id="name" name="nombre" type="text" placeholder="Tu nombre" required>
+                </div>
+
+                <!-- Campo: Email -->
+                <div class="form-row">
+                    <label for="email">Correo</label>
+                    <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+                </div>
+
+                <!-- Campo: Mensaje -->
+                <div class="form-row">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje..."
+                        required></textarea>
+                </div>
+
+                <!-- Acciones del formulario -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                </div>
+
+                <!-- Mensaje de estado tras el envío (gestionado por JS) -->
+                <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+
+            </form>
+
+            <!-- Vías de contacto directas, siempre visibles -->
+            <div class="contact-links">
+                <span class="contact-email-group">
+                    <a href="mailto:pro.silvatech@gmail.com" class="btn-contacto">✉️ pro.silvatech@gmail.com</a>
+                    <button type="button" class="btn-copy" data-copy="pro.silvatech@gmail.com" title="Copiar email al portapapeles" aria-label="Copiar email al portapapeles">📋</button>
+                </span>
+                <a href="https://www.linkedin.com/in/victor-da-silva-bertola-59b175257" class="btn-contacto" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/silbertvb" class="btn-contacto" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox de capturas (fallback de las demos en vivo) -->
+    <div id="galleryOverlay" class="gallery-overlay" hidden>
+        <div class="gallery-box" role="dialog" aria-modal="true" aria-label="Capturas del proyecto">
+            <button type="button" class="gallery-close" aria-label="Cerrar">✕</button>
+            <div class="gallery-images"></div>
+        </div>
+    </div>
+
+    <!-- Datos de las galerías: id del proyecto -> imágenes y pies de foto -->
+    <script>
+        window.PROJECT_GALLERIES = {
+            'edutech-gallery': [
+                { src: 'img/EduTech-leccion.jpg', alt: 'EduTech — vista de una lección con contenido teórico y editor de código', caption: 'Vista de alumno: lección de HTML' },
+                { src: 'img/EduTech-test.jpg', alt: 'EduTech — resultado de un test corregido con revisión de respuestas', caption: 'Test corregido con revisión de respuestas' }
+            ]
+        };
+    </script>
+
+    <!-- script para la integracion con JS -->
+    <script src="stars.js"></script>
+    <script src="contact-form.js"></script>
+    <script src="gallery.js"></script>
+</body>
+
+</html>
