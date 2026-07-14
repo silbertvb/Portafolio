@@ -33,13 +33,14 @@ Técnico Superior en Desarrollo de Aplicaciones Web (2026), con prácticas en un
 - PostgreSQL
 - MongoDB
 - MySQL
+- Neon
 
 ### ⚙️ DevOps
 - Docker
 - Git / GitHub
 - GitHub Actions
 - Linux
-- Railway
+- Render
 - Netlify
 
 ### 📚 En formación
