@@ -50,12 +50,12 @@ Técnico Superior en Desarrollo de Aplicaciones Web (2026), con prácticas en un
 ## 📁 Proyectos destacados
 
 ### 🎓 EduTech — Plataforma e-learning full-stack (TFG)
-Monorepo con npm workspaces: frontend en React + Vite y backend en Express con base de datos PostgreSQL. Autenticación con Google OAuth 2.0 (Passport) y cuentas locales con contraseña hasheada, control de acceso por roles (alumno/profesor/administrador), CRUD completo de cursos, lecciones y tests, y backoffice de administración. Base de datos en Docker, desplegado en Railway.
+Monorepo con npm workspaces: frontend en React + Vite y backend en Express con base de datos PostgreSQL. Autenticación con Google OAuth 2.0 (Passport) y cuentas locales con contraseña hasheada, control de acceso por roles (alumno/profesor/administrador), CRUD completo de cursos, lecciones y tests, y backoffice de administración. Base de datos en Neon (PostgreSQL serverless), backend desplegado en Render.
 
 - 🔗 Repositorio: https://github.com/silbertvb/EduTech
-- 🔗 Demo: https://edutech-production-703d.up.railway.app/ (si no responde por ser hosting en capa gratuita, el portafolio incluye un botón "Ver capturas" con pantallazos reales de la app)
+- 🔗 Demo: https://edutech-ujtr.onrender.com (hosting en capa gratuita: la primera carga puede tardar ~30s en arrancar; si no responde, el portafolio incluye un botón "Ver capturas" con pantallazos reales de la app)
 
-**Tecnologías:** React · Vite · Express · PostgreSQL · Passport (OAuth 2.0) · Docker · Railway
+**Tecnologías:** React · Vite · Express · PostgreSQL · Passport (OAuth 2.0) · Neon · Render
 
 ### 📅 Event App — Gestión de eventos en tiempo real
 Aplicación web para la gestión y visualización de eventos en tiempo real entre cliente y servidor, con filtrado por categoría y fechas, e inscripción con actualización inmediata del contador de participantes. Arquitectura modular: backend (API REST + WebSocket) separado del frontend (React con Context API).
